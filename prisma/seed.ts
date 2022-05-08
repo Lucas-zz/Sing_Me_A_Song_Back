@@ -7,7 +7,7 @@ async function seed() {
             { name: "Toss A Coin to Your Witcher", youtubeLink: "https://www.youtube.com/watch?v=waMkFIzvDpE" },
             { name: "Netflix The Witcher - Full Original Soundtrack", youtubeLink: "https://www.youtube.com/watch?v=uv54ec8Pg1k" }
         ]
-    })
+    });
 }
 
 seed()
