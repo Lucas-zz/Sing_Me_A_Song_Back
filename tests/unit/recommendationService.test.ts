@@ -31,7 +31,7 @@ describe("Unit Tests - Recommendation Services", () => {
     });
 
     describe("UPVOTE - RecommendationService", () => {
-        it("should throw erro if no recommendation is found", async () => {
+        it("should throw error if no recommendation is found", async () => {
             jest.spyOn(recommendationRepository, "find").mockReturnValue(null);
 
             expect(async () => {
@@ -41,7 +41,7 @@ describe("Unit Tests - Recommendation Services", () => {
     });
 
     describe("DOWNVOTE - RecommendationService", () => {
-        it("should delete recommendation if a downvote bring to lower then -5", async () => {
+        it("should delete recommendation if its downvote score is lower than -5", async () => {
             const recommendation = recommendationDataFactory();
 
             jest.spyOn(recommendationRepository, "find").mockResolvedValue(recommendation);
@@ -56,7 +56,7 @@ describe("Unit Tests - Recommendation Services", () => {
             expect(remove).toHaveBeenCalledTimes(1);
         });
 
-        it("should throw erro if no recommendation is found", async () => {
+        it("should throw error if no recommendation is found", async () => {
             jest.spyOn(recommendationRepository, "find").mockReturnValue(null);
 
             expect(async () => {
@@ -131,7 +131,7 @@ describe("Unit Tests - Recommendation Services", () => {
     });
 
     describe("RANDOM - RecommendationService", () => {
-        it("should throw erro if no recommendation is found", async () => {
+        it("should throw error if no recommendation is found", async () => {
             jest.spyOn(recommendationService, "getScoreFilter").mockReturnValue("gt");
             jest.spyOn(recommendationService, "getByScore").mockResolvedValue([]);
             jest.spyOn(recommendationRepository, "findAll").mockResolvedValue([]);
