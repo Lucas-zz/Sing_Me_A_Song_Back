@@ -1,17 +1,29 @@
 import { prisma } from "../../src/database.js";
-import { Recommendation } from "@prisma/client";
 import { CreateRecommendationData } from "../../src/services/recommendationsService.js";
+import { manyRecommendationsBodyFactory, nthRecommendationsBodyFactory, recommendationBodyFactory } from "./recommendationBodyFactory.js";
 
-export const recommendationFactory: CreateRecommendationData = {
-    name: "Commanding The Fury - The Witcher 3",
-    youtubeLink: "https://www.youtube.com/watch?v=trxSGpAA31Q"
-};
+export async function recommendationFactory() {
+    const data: CreateRecommendationData = recommendationBodyFactory();
 
-export const recommendationIntegrationFactory: CreateRecommendationData = {
-    name: "The Song Of the White Wolf - The Witcher 3",
-    youtubeLink: "https://www.youtube.com/watch?v=E2bNdbAcQSI"
-};
+    return await prisma.recommendation.create({
+        data
+    });
+}
 
-export async function findRecommendationDatabaseSeed(id: number): Promise<Recommendation> {
-    return await prisma.recommendation.findUnique({ where: { id } });
+export async function manyRecommendationsFactory() {
+    const data = manyRecommendationsBodyFactory();
+
+    await prisma.recommendation.createMany({
+        data,
+        skipDuplicates: true
+    });
+}
+
+export async function nthRecommendationsFactory(number: number) {
+    const data = nthRecommendationsBodyFactory(number);
+
+    await prisma.recommendation.createMany({
+        data,
+        skipDuplicates: true
+    });
 }
