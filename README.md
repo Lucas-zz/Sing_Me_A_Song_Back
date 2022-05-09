@@ -22,7 +22,7 @@
 
 ## About
 
-<b>Sing Me A Song</b> is an API for anomalous music recommendation. The more people like a recommendation, the greater the chance that it will be recommended to others 🙂 .
+<b>Sing Me A Song</b> is an API for anonymous song recommendation. The more people like a recommendation, the more likely it is to be recommended to others 🙂 .
 
 ---
 
@@ -214,7 +214,7 @@ You can find the .env.example <a href="https://github.com/Lucas-zz/Sing_Me_A_Son
 
 ### Testing
 
-To run the <b>integration</b> and <b>unit</b> tests, some minor things will need to be done first
+To run the <b>integration</b> and <b>unit</b> tests, some minor configurations will need to be done first
 
 ``` jsx
 // Create a .env.test file and fill it using your environment variables following the .env.test.example
@@ -232,7 +232,7 @@ $ npm run dev:test
 $ npm run test
 
 ```
-You can find the .env.example <a href="https://github.com/Lucas-zz/Sing_Me_A_Song_Back/blob/main/.env.test.example">here</a>
+You can find the .env.test.example <a href="https://github.com/Lucas-zz/Sing_Me_A_Song_Back/blob/main/.env.test.example">here</a>
 
 ## Tech Stack
 
