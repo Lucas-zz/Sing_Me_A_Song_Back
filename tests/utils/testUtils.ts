@@ -10,3 +10,15 @@ export async function truncateRecommendations() {
 export async function disconnectPrismas() {
     await prisma.$disconnect();
 }
+
+export async function findRecommendationByName(name: string) {
+    return await prisma.recommendation.findUnique({
+        where: { name }
+    });
+}
+
+export async function findRecommendationById(id: number) {
+    return await prisma.recommendation.findUnique({
+        where: { id }
+    });
+}
