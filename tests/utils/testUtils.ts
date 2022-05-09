@@ -1,4 +1,5 @@
 import { prisma } from "../../src/database.js";
+import { jest } from "@jest/globals";
 
 export async function truncateRecommendations() {
     await prisma.$executeRaw`
@@ -21,4 +22,9 @@ export async function findRecommendationById(id: number) {
     return await prisma.recommendation.findUnique({
         where: { id }
     });
+}
+
+export function resetTests() {
+    jest.clearAllMocks();
+    jest.resetAllMocks();
 }
