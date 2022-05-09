@@ -197,7 +197,7 @@ $ cd Sing_Me_A_Song_Back
 // Install the dependencies
 $ npm install
 
-// Create a .env.dev file and fill it using your environment variables following the .env.example
+// Create a .env file and fill it using your environment variables following the .env.example
 
 // Create the Database (designed with Prisma)
 $ npx prisma migrate dev
