@@ -217,6 +217,8 @@ You can find the .env.example <a href="https://github.com/Lucas-zz/Sing_Me_A_Son
 To run the <b>integration</b> and <b>unit</b> tests, some minor things will need to be done first
 
 ``` jsx
+// Create a .env.test file and fill it using your environment variables following the .env.test.example
+
 // Create a new database made for testing
 $ npx dotenv -e .env.test prisma migrate dev
 
@@ -230,6 +232,7 @@ $ npm run dev:test
 $ npm run test
 
 ```
+You can find the .env.example <a href="https://github.com/Lucas-zz/Sing_Me_A_Song_Back/blob/main/.env.test.example">here</a>
 
 ## Tech Stack
 
