@@ -5,8 +5,9 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# Ignore test-related files
+/coverage.data
+/coverage/
 
 # production
 /build
