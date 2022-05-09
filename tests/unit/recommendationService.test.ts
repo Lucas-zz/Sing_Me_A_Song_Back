@@ -3,19 +3,11 @@ import { jest } from "@jest/globals";
 import { recommendationRepository } from "../../src/repositories/recommendationRepository";
 import { recommendationService } from "../../src/services/recommendationsService";
 import { recommendationDataFactory } from "../factories/recommendationBodyFactory";
-
-const notFoundError = {
-    message: "",
-    type: "not_found"
-};
-
-const conflictError = {
-    message: "Recommendations names must be unique",
-    type: "conflict"
-};
+import * as errorUtils from "../../src/utils/errorUtils";
+import * as testUtils from "../utils/testUtils";
 
 describe("Unit Tests - Recommendation Services", () => {
-    beforeEach(resetTests);
+    beforeEach(testUtils.resetTests);
 
     describe("INSERT - RecommendationService", () => {
         it("should throw error if no recommendation is found", async () => {
@@ -26,7 +18,7 @@ describe("Unit Tests - Recommendation Services", () => {
 
             expect(async () => {
                 await recommendationService.insert(recommendation);
-            }).rejects.toEqual(conflictError);;
+            }).rejects.toEqual(errorUtils.conflictError);
         });
     });
 
@@ -36,7 +28,7 @@ describe("Unit Tests - Recommendation Services", () => {
 
             expect(async () => {
                 await recommendationService.upvote(1);
-            }).rejects.toEqual(notFoundError);;
+            }).rejects.toEqual(errorUtils.notFoundError);
         });
     });
 
@@ -61,7 +53,7 @@ describe("Unit Tests - Recommendation Services", () => {
 
             expect(async () => {
                 await recommendationService.downvote(1);
-            }).rejects.toEqual(notFoundError);;
+            }).rejects.toEqual(errorUtils.notFoundError);
         });
     });
 
@@ -112,7 +104,7 @@ describe("Unit Tests - Recommendation Services", () => {
 
             expect(async () => {
                 await recommendationService.getRandom();
-            }).rejects.toEqual(notFoundError);
+            }).rejects.toEqual(errorUtils.notFoundError);
         });
     });
 
@@ -138,12 +130,7 @@ describe("Unit Tests - Recommendation Services", () => {
 
             expect(async () => {
                 await recommendationService.getRandom();
-            }).rejects.toEqual(notFoundError);
+            }).rejects.toEqual(errorUtils.notFoundError);
         });
     });
-})
-
-function resetTests() {
-    jest.clearAllMocks();
-    jest.resetAllMocks();
-}
+});
