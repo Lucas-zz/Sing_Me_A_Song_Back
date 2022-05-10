@@ -245,7 +245,6 @@ The following tools were used in the construction of the project-api:
 -   **[Prisma](https://github.com/prisma/prisma)**
 -   **[DotENV](https://github.com/motdotla/dotenv)**
 -   **[Joi](https://github.com/hapijs/joi)**
--   **[Jest](https://github.com/facebook/jest)**
 -   **[Faker-js](https://github.com/faker-js/faker)**
 -   **[Supertest](https://github.com/visionmedia/supertest)**
 <!-- -   **[NTL](https://github.com/ruyadorno/ntl)** -->
@@ -257,7 +256,8 @@ The following tools were used in the construction of the project-api:
 **Utilities**
 
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
--   API Test:  **[Cypress](https://www.cypress.io/)**
+-   API Test:  **[Jest](https://github.com/facebook/jest)**
+-   Front Test: **[Cypress](https://www.cypress.io/)**
 
 
 ---
